@@ -1,1 +1,970 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vertex RP – Notruf Hamburg Server auf Roblox</title>
+<meta name="description" content="Offizielle Webseite unseres Roblox-Servers Notruf Hamburg: Regeln, Bewerbung, Fraktionen und Discord. Werde Polizist, Feuerwehrmann oder Rettungssanitäter in Hamburg.">
+<meta name="keywords" content="Notruf Hamburg, Roblox, Roblox Server, Polizei, Feuerwehr, Rettungsdienst, Roleplay, Discord">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://elegant-kangaroo-3b51c7.netlify.app/">
+<meta property="og:url" content="https://elegant-kangaroo-3b51c7.netlify.app/">
+<meta property="og:title" content="Notruf Hamburg Server – Roblox Community">
+<meta property="og:description" content="Regeln, Bewerbung, Fraktionen und Discord unseres Roblox-Servers.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg: rgb(8, 10, 26);
+  --text: rgb(240, 243, 250);
+  --muted: rgb(155, 165, 190);
+  --dim: rgb(115, 125, 150);
+  --accent: rgb(96, 165, 250);
+  --accent-2: rgb(168, 85, 247);
+  --accent-3: rgb(34, 211, 238);
+  --pink: rgb(244, 114, 182);
+  --ok: rgb(52, 211, 153);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-hover: rgba(255, 255, 255, 0.06);
+  --radius: 18px;
+}
 
+*{box-sizing:border-box; -webkit-tap-highlight-color: transparent}
+html{scroll-behavior:smooth}
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-layer{
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 120% 70% at 50% -20%, rgb(35, 45, 110) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 10%, rgb(60, 25, 90) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 0% 30%, rgb(15, 40, 90) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgb(45, 15, 60) 0%, transparent 60%),
+    linear-gradient(180deg, rgb(8, 10, 30) 0%, rgb(12, 10, 28) 50%, rgb(6, 8, 20) 100%);
+}
+
+.aurora{
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  height: 60vh;
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.aurora.a1{
+  top: -10vh;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.35) 20%,
+    rgba(168, 85, 247, 0.5) 45%,
+    rgba(34, 211, 238, 0.4) 70%,
+    transparent 100%);
+  animation: auroraWave 18s ease-in-out infinite alternate;
+}
+.aurora.a2{
+  top: 5vh;
+  height: 40vh;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(244, 114, 182, 0.35) 25%,
+    rgba(139, 92, 246, 0.45) 50%,
+    rgba(96, 165, 250, 0.35) 75%,
+    transparent 100%);
+  animation: auroraWave 24s ease-in-out infinite alternate-reverse;
+  opacity: 0.8;
+}
+@keyframes auroraWave{
+  0%{ transform: translateX(-10%) skewY(-3deg) scaleY(1); opacity: 0.7 }
+  50%{ transform: translateX(5%) skewY(2deg) scaleY(1.15); opacity: 1 }
+  100%{ transform: translateX(10%) skewY(-1deg) scaleY(0.95); opacity: 0.8 }
+}
+
+.orb{
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  will-change: transform;
+}
+.orb.o1{
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgb(59, 130, 246) 0%, transparent 70%);
+  top: -100px; left: -80px;
+  opacity: 0.5;
+  animation: floatOrb1 26s ease-in-out infinite alternate;
+}
+.orb.o2{
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgb(168, 85, 247) 0%, transparent 70%);
+  top: 8%; right: -100px;
+  opacity: 0.45;
+  animation: floatOrb2 30s ease-in-out infinite alternate;
+}
+.orb.o3{
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgb(34, 211, 238) 0%, transparent 70%);
+  bottom: 10%; left: 15%;
+  opacity: 0.3;
+  animation: floatOrb3 34s ease-in-out infinite alternate;
+}
+.orb.o4{
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgb(244, 114, 182) 0%, transparent 70%);
+  bottom: -100px; right: 15%;
+  opacity: 0.28;
+  animation: floatOrb1 28s ease-in-out infinite alternate-reverse;
+}
+@keyframes floatOrb1{
+  0%{ transform: translate(0,0) scale(1) }
+  50%{ transform: translate(60px, 80px) scale(1.15) }
+  100%{ transform: translate(-50px, 40px) scale(0.9) }
+}
+@keyframes floatOrb2{
+  0%{ transform: translate(0,0) scale(1) }
+  50%{ transform: translate(-80px, 60px) scale(1.1) }
+  100%{ transform: translate(40px, -60px) scale(0.92) }
+}
+@keyframes floatOrb3{
+  0%{ transform: translate(0,0) scale(1) }
+  50%{ transform: translate(100px, -60px) scale(1.2) }
+  100%{ transform: translate(-60px, 30px) scale(0.95) }
+}
+
+.stars{
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 80% 20%, rgba(200,220,255,0.7), transparent),
+    radial-gradient(1px 1px at 40% 90%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.2px 1.2px at 90% 60%, rgba(255,255,255,0.55), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.3px 1.3px at 55% 15%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 35% 50%, rgba(200,220,255,0.5), transparent),
+    radial-gradient(1.4px 1.4px at 70% 85%, rgba(255,255,255,0.45), transparent);
+  background-size: 500px 500px, 400px 400px, 600px 600px, 350px 350px, 450px 450px, 380px 380px, 520px 520px, 420px 420px, 480px 480px;
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes twinkle{
+  0%{ opacity: 0.55 }
+  100%{ opacity: 0.95 }
+}
+
+.shooting-star{
+  position: absolute;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(200, 220, 255, 0.8) 50%, rgba(255,255,255,1) 100%);
+  border-radius: 999px;
+  filter: drop-shadow(0 0 4px rgba(150, 200, 255, 0.9));
+  opacity: 0;
+  animation: shoot 8s linear infinite;
+  pointer-events: none;
+}
+.shooting-star.s1{ top: 12%; left: -10%; animation-delay: 0s; }
+.shooting-star.s2{ top: 28%; left: -10%; animation-delay: 4s; animation-duration: 10s; }
+.shooting-star.s3{ top: 6%; left: -10%; animation-delay: 6.5s; animation-duration: 9s; }
+.shooting-star.s4{ top: 42%; left: -10%; animation-delay: 2s; animation-duration: 12s; }
+@keyframes shoot{
+  0%{ transform: translateX(0) translateY(0) rotate(-15deg); opacity: 0 }
+  5%{ opacity: 1 }
+  60%{ opacity: 1 }
+  100%{ transform: translateX(120vw) translateY(60vh) rotate(-15deg); opacity: 0 }
+}
+
+.floor-grid{
+  position: absolute;
+  bottom: -5vh;
+  left: -60%;
+  width: 220%;
+  height: 65vh;
+  background-image:
+    linear-gradient(rgba(96, 165, 250, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 165, 250, 0.35) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(420px) rotateX(58deg);
+  transform-origin: center bottom;
+  mask-image: linear-gradient(to top, rgb(0,0,0) 0%, rgb(0,0,0) 35%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to top, rgb(0,0,0) 0%, rgb(0,0,0) 35%, transparent 92%);
+  animation: floorScroll 5s linear infinite;
+  opacity: 0.85;
+}
+@keyframes floorScroll{
+  to{ background-position: 0 60px, 0 0 }
+}
+
+.ceiling-grid{
+  position: absolute;
+  top: -5vh;
+  left: -60%;
+  width: 220%;
+  height: 50vh;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.22) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: perspective(500px) rotateX(-58deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(to bottom, rgb(0,0,0) 0%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0,0,0) 0%, transparent 70%);
+  animation: ceilingScroll 8s linear infinite;
+  opacity: 0.5;
+}
+@keyframes ceilingScroll{
+  to{ background-position: 0 -80px, 0 0 }
+}
+
+.spotlight{
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(96, 165, 250, 0.16) 0%,
+    rgba(168, 85, 247, 0.1) 30%,
+    transparent 65%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  filter: blur(30px);
+  transition: top 0.5s cubic-bezier(.2,.8,.3,1), left 0.5s cubic-bezier(.2,.8,.3,1);
+  will-change: top, left;
+}
+
+.scan{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(96, 165, 250, 0.6) 30%,
+    rgba(168, 85, 247, 0.8) 50%,
+    rgba(96, 165, 250, 0.6) 70%,
+    transparent 100%);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.6), 0 0 40px rgba(168, 85, 247, 0.4);
+  animation: scanMove 9s linear infinite;
+  opacity: 0.6;
+}
+@keyframes scanMove{
+  0%{ top: -5%; opacity: 0 }
+  10%{ opacity: 0.7 }
+  90%{ opacity: 0.7 }
+  100%{ top: 105%; opacity: 0 }
+}
+
+.particles{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.particle{
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: rgba(150, 200, 255, 0.9);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.9), 0 0 16px rgba(96, 165, 250, 0.5);
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.particle.pink{
+  background: rgba(255, 180, 220, 0.9);
+  box-shadow: 0 0 8px rgba(244, 114, 182, 0.9), 0 0 16px rgba(244, 114, 182, 0.5);
+}
+.particle.cyan{
+  background: rgba(150, 240, 255, 0.9);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.9), 0 0 16px rgba(34, 211, 238, 0.5);
+}
+@keyframes rise{
+  0%{ transform: translateY(0) translateX(0) scale(1); opacity: 0 }
+  10%{ opacity: 1 }
+  85%{ opacity: 1 }
+  100%{ transform: translateY(-110vh) translateX(40px) scale(0.6); opacity: 0 }
+}
+
+.vignette{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(8, 10, 26, 0.85) 95%);
+}
+
+.wrap{max-width: 1080px; margin: 0 auto; padding: 0 24px}
+
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 0;
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  background: rgba(8, 10, 26, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner{
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.brand-mark{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px -8px rgba(96, 165, 250, 0.7);
+  position: relative;
+}
+.brand-mark::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.4));
+  opacity: 0.5;
+}
+nav .links{display: flex; gap: 4px; flex-wrap: wrap}
+nav .links a{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+nav .links a:hover{ color: var(--text); background: var(--glass-hover) }
+
+.hero{ padding: 100px 0 80px; position: relative }
+.badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(52, 211, 153, 0.1);
+  color: rgb(110, 240, 180);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+.badge::before{
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgb(110, 240, 180);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25), 0 0 12px rgb(110, 240, 180);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{ transform: scale(1); opacity: 1 }
+  50%{ transform: scale(1.2); opacity: 0.7 }
+}
+
+h1{
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  line-height: 1.02;
+  margin: 26px 0 22px;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  background: linear-gradient(180deg, rgb(255,255,255) 20%, rgb(160, 180, 220) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  max-width: 900px;
+}
+h1 .grad{
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-3) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradShift 6s ease-in-out infinite;
+}
+@keyframes gradShift{
+  0%,100%{ background-position: 0% 50% }
+  50%{ background-position: 100% 50% }
+}
+
+.lead{
+  color: var(--muted);
+  font-size: 1.14rem;
+  max-width: 640px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.btns{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px }
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 13px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  background: var(--glass);
+  transition: transform 0.18s ease, background 0.25s, border-color 0.25s, box-shadow 0.3s;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.btn:hover::before{ transform: translateX(100%) }
+.btn:hover{
+  transform: translateY(-2px);
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.btn.primary{
+  background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(139, 92, 246) 100%);
+  color: rgb(255, 255, 255);
+  border-color: transparent;
+  box-shadow:
+    0 10px 30px -10px rgba(99, 102, 241, 0.7),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.btn.primary:hover{
+  box-shadow:
+    0 16px 45px -10px rgba(99, 102, 241, 0.95),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.btn.code{
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.btn.code b{ color: var(--text); font-weight: 700; letter-spacing: 0.05em }
+
+.stats{
+  display: flex;
+  gap: 40px;
+  margin-top: 64px;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.stat{display: flex; flex-direction: column; gap: 4px}
+.stat-num{
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-label{
+  font-size: 0.8rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+section{ padding: 60px 0; scroll-margin-top: 90px; position: relative }
+.section-head{ margin-bottom: 36px }
+.section-tag{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.section-tag::before{
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+}
+h2{
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+.card{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  transition: transform 0.3s ease, background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+.card::after{
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(96, 165, 250, 0.15) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.card:hover{
+  transform: translateY(-5px);
+  background: var(--glass-hover);
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 24px 50px -20px rgba(59, 130, 246, 0.35);
+}
+.card:hover::after{ opacity: 1 }
+.card-icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(168, 85, 247, 0.15));
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+.card h3{
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.card p{ margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6 }
+
+ol{
+  padding: 0;
+  list-style: none;
+  counter-reset: rule;
+  display: grid;
+  gap: 12px;
+}
+ol li{
+  counter-increment: rule;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px 18px 66px;
+  position: relative;
+  color: var(--text);
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  backdrop-filter: blur(10px);
+}
+ol li::before{
+  content: counter(rule, decimal-leading-zero);
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+}
+ol li:hover{
+  background: var(--glass-hover);
+  border-color: rgba(96, 165, 250, 0.25);
+  transform: translateX(4px);
+}
+
+.apply-card{
+  position: relative;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(168, 85, 247, 0.08) 100%);
+  border: 1px solid rgba(120, 130, 255, 0.28);
+  border-radius: var(--radius);
+  padding: 40px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+}
+.apply-card::before{
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.apply-card::after{
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.3), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.apply-card h3{
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+.apply-card p{
+  color: var(--muted);
+  margin: 0 0 24px;
+  max-width: 640px;
+  position: relative;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+details{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  transition: background 0.25s, border-color 0.25s;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+details[open]{
+  background: var(--glass-hover);
+  border-color: rgba(96, 165, 250, 0.28);
+}
+summary{
+  cursor: pointer;
+  font-weight: 600;
+  padding: 18px 22px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+summary:hover{ color: var(--accent) }
+summary::-webkit-details-marker{ display: none }
+summary::after{
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--muted);
+  transition: transform 0.3s, color 0.3s;
+  line-height: 1;
+  font-weight: 400;
+}
+details[open] summary::after{ content: "−"; color: var(--accent) }
+details p{
+  color: var(--muted);
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+footer{
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding: 40px 0 60px;
+  color: var(--dim);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible{ opacity: 1; transform: translateY(0) }
+
+@media (max-width: 720px){
+  .hero{ padding: 60px 0 40px }
+  nav .links a{ padding: 8px 10px; font-size: 0.85rem }
+  .apply-card{ padding: 28px }
+  .card{ padding: 22px }
+  .stats{ gap: 28px; margin-top: 44px; padding-top: 28px }
+  .stat-num{ font-size: 1.5rem }
+  section{ padding: 44px 0 }
+  .aurora{ filter: blur(45px) }
+  .orb{ filter: blur(55px) }
+  .floor-grid{ background-size: 40px 40px; opacity: 0.6 }
+  .spotlight{ display: none }
+  .shooting-star{ display: none }
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation: none !important; transition: none !important }
+  .reveal{ opacity: 1; transform: none }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-layer">
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+  <div class="orb o4"></div>
+  <div class="stars"></div>
+  <div class="shooting-star s1"></div>
+  <div class="shooting-star s2"></div>
+  <div class="shooting-star s3"></div>
+  <div class="shooting-star s4"></div>
+  <div class="ceiling-grid"></div>
+  <div class="floor-grid"></div>
+  <div class="scan"></div>
+  <div class="spotlight"></div>
+  <div class="particles"></div>
+  <div class="vignette"></div>
+</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <span class="brand-mark">🌆</span>
+      <span>Vertex RP</span>
+    </div>
+    <div class="links">
+      <a data-scroll="fraktionen">Fraktionen</a>
+      <a data-scroll="regeln">Regeln</a>
+      <a data-scroll="bewerben">Bewerben</a>
+      <a data-scroll="faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero reveal">
+    <span class="badge">Server Online</span>
+    <h1>Dein Einsatz in <span class="grad">Hamburg</span> beginnt hier.</h1>
+    <p class="lead">Vertex RP ist unser Roblox-Server für Notruf Hamburg: realistisches Roleplay, faire Regeln und eine freundliche deutschsprachige Community. Ob Polizei, Feuerwehr oder Rettungsdienst – hier ist Platz für dich.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.roblox.com/games/7711635737/Emergency-Hamburg" target="_blank" rel="noopener">Auf Roblox beitreten →</a>
+      <span class="btn code">Servercode: <b>s6ce8z74</b></span>
+      <a class="btn" href="https://discord.gg/qwu6kuHpt" target="_blank" rel="noopener">Discord beitreten</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Erreichbar</span></div>
+      <div class="stat"><span class="stat-num">4</span><span class="stat-label">Fraktionen</span></div>
+      <div class="stat"><span class="stat-num">DE</span><span class="stat-label">Community</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Kostenlos</span></div>
+    </div>
+  </header>
+
+  <section id="fraktionen" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Fraktionen</span>
+      <h2>Wähle deine Rolle</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">👮</div>
+        <h3>Polizei</h3>
+        <p>Streife fahren, Verkehrskontrollen und Einsätze in der ganzen Stadt.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚒</div>
+        <h3>Feuerwehr</h3>
+        <p>Brände löschen, Unfälle absichern und technische Hilfe leisten.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚑</div>
+        <h3>Rettungsdienst</h3>
+        <p>Patienten versorgen und schnell ins Krankenhaus bringen.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧑</div>
+        <h3>Zivilisten</h3>
+        <p>Erlebe die Stadt, melde Notfälle und spiele deine eigene Rolle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="regeln" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Regeln</span>
+      <h2>Serverregeln</h2>
+    </div>
+    <ol>
+      <li>Respektvoller Umgang: keine Beleidigungen, Mobbing oder Diskriminierung.</li>
+      <li>Bleib in deiner Rolle und spiele realistisch (kein Fail-RP, kein Random Death Match).</li>
+      <li>Kein Trollen, Spawn-Killing oder Missbrauch von Fahrzeugen und Ausrüstung.</li>
+      <li>Keine Bugs oder Exploits ausnutzen. Fehler bitte dem Team melden.</li>
+      <li>Den Anweisungen des Teams ist Folge zu leisten.</li>
+      <li>Es gelten immer die Roblox-Nutzungsbedingungen und Community-Standards.</li>
+    </ol>
+  </section>
+
+  <section id="bewerben" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">Bewerben</span>
+      <h2>Werde Teil des Teams</h2>
+    </div>
+    <div class="apply-card">
+      <h3>Bereit für den Einsatz?</h3>
+      <p>Du möchtest Polizist, Feuerwehrmann, Sanitäter oder Teammitglied werden? Tritt unserem Discord bei und öffne im Bereich „Bewerbungen“ ein Ticket. Wir melden uns so schnell wie möglich bei dir.</p>
+      <div class="btns" style="margin-top: 0;">
+        <a class="btn primary" href="https://discord.gg/qwu6kuHpt" target="_blank" rel="noopener">Zur Bewerbung im Discord →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <span class="section-tag">FAQ</span>
+      <h2>Häufige Fragen</h2>
+    </div>
+    <details>
+      <summary>Ist der Server kostenlos?</summary>
+      <p>Ja, du kannst kostenlos mitspielen. Du brauchst nur einen Roblox-Account.</p>
+    </details>
+    <details>
+      <summary>Wie alt muss ich sein?</summary>
+      <p>Es gelten die Altersvorgaben von Roblox. Für Teamränge kann ein Mindestalter gelten.</p>
+    </details>
+    <details>
+      <summary>Wann ist der Server online?</summary>
+      <p>Aktuelle Zeiten und Ankündigungen findest du in unserem Discord.</p>
+    </details>
+    <details>
+      <summary>Wie melde ich einen Regelverstoß?</summary>
+      <p>Erstelle im Discord ein Support-Ticket und schicke uns Screenshots oder Videos.</p>
+    </details>
+  </section>
+
+  <footer>
+    Inoffizieller Fan-Server. Wir sind nicht mit Roblox Corporation oder den Entwicklern von Notruf Hamburg verbunden. Roblox ist eine Marke der Roblox Corporation.
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-scroll]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var target = document.getElementById(link.getAttribute('data-scroll'));
+      if(target){
+        target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+  var spotlight = document.querySelector('.spotlight');
+  if(spotlight && window.matchMedia('(pointer: fine)').matches){
+    var targetX = window.innerWidth / 2;
+    var targetY = window.innerHeight / 2;
+    var currentX = targetX;
+    var currentY = targetY;
+    window.addEventListener('mousemove', function(e){
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+    function animateSpotlight(){
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      spotlight.style.left = currentX + 'px';
+      spotlight.style.top = currentY + 'px';
+      requestAnimationFrame(animateSpotlight);
+    }
+    animateSpotlight();
+  } else if(spotlight){
+    spotlight.style.left = '50%';
+    spotlight.style.top = '35%';
+  }
+
+  var particlesContainer = document.querySelector('.particles');
+  if(particlesContainer){
+    var count = window.innerWidth < 720 ? 22 : 38;
+    var palettes = ['', 'pink', 'cyan'];
+    for(var i = 0; i < count; i++){
+      var p = document.createElement('span');
+      var tint = palettes[Math.floor(Math.random() * palettes.length)];
+      p.className = 'particle' + (tint ? ' ' + tint : '');
+      p.style.left = Math.random() * 100 + '%';
+      var size = 1 + Math.random() * 2.4;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.animationDelay = (Math.random() * 20) + 's';
+      p.style.animationDuration = (14 + Math.random() * 18) + 's';
+      p.style.opacity = 0.3 + Math.random() * 0.5;
+      particlesContainer.appendChild(p);
+    }
+  }
+</script>
+
+</body>
+</html>
